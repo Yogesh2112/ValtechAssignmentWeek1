@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Employee Registration</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(6, 153, 153);
+        line-height: 1.5;
+      }
+      header {
+        border: 2px solid #333;
+        background-color: rgb(210, 206, 206);
+        text-align: center;
+        color: #333;
+        margin: 30px auto;
+        max-width: 520px;
+        /* padding: 20px; */
+      }
+      main {
+        border: 2px solid #333;
+        background-color: rgb(210, 206, 206);
+        margin: 15px auto;
+        max-width: 520px;
+        padding: 20px;
+      }
+      input {
+        padding: 10px;
+        border: #ddd 1px solid;
+        border-radius: 5px;
+      }
+      #firstname,
+      #lastname,
+      #email {
+        width: 100%;
+        padding: 10px;
+        border: #ddd 1px solid;
+        border-radius: 5px;
+      }
+      #birthcity {
+        padding: 10px;
+        border: #ddd 1px solid;
+        border-radius: 5px;
+      }
+
+      #btn {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #49c1a2;
+        color: white;
+        cursor: pointer;
+      }
+
+      #btn:hover {
+        background-color: #37a08e;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>New Employee Registration Form</h1>
+    </header>
+    <main>
+      <form action="#">
+        <label for="firstname">First Name: </label>
+        <br />
+        <input type="text" name="firstname" id="firstname" placeholder="Enter your first name" required />
+        <br />
+        <br />
+
+        <label for="lastname">Last Name: </label>
+        <br />
+        <input type="text" name="lastname" id="lastname" placeholder="Enter your last name" required />
+
+        <br />
+        <br />
+
+        <label for="email">Email: </label>
+        <br />
+        <input type="email" name="email" id="email" placeholder="Enter your email" required />
+
+        <br />
+        <br />
+
+        <label for="gender">Gender: </label>
+        <br />
+        <input type="radio" name="gender" id="male" value="Male" required />
+        <label for="male">Male </label>
+        <input type="radio" name="gender" id="female" value="Female" required />
+        <label for="female">Female </label>
+
+        <br />
+        <br />
+
+        <label for="age">Age: </label>
+        <input min="18" max="60" type="number" name="age" id="age" required />
+
+        <br />
+        <br />
+
+        <label for="birthcity">Birth City: </label>
+        <select name="birthcity" id="birthcity" required>
+          <option disabled selected value></option>
+          <option value="bangalore">Bangalore</option>
+          <option value="bidar">Bidar</option>
+          <option value="guwahati">Guwahati</option>
+          <option value="hassan">Hassan</option>
+          <option value="jaipur">Jaipur</option>
+          <option value="kanpur">Kanpur</option>
+          <option value="mangalore">Mangalore</option>
+          <option value="patna">Patna</option>
+          <option value="ramnagar">Ramnagar</option>
+          <option value="sambalpur">Sambalpur</option>
+          <option value="srinagar">Srinagar</option>
+          <option value="tumkur">Tumkur</option>
+        </select>
+
+        <br />
+        <br />
+
+        <label for="resume">Select Your Resume:</label>
+        <input
+          type="file"
+          name="resume"
+          id="resume"
+          accept="application/pdf, application/doc, application/docx"
+          required
+        />
+        <br />
+        <br />
+
+        <label for="position">Position Applying For:</label>
+        <br />
+        <input
+          type="checkbox"
+          name="developer"
+          id="developer"
+          value="developer"
+          checked
+        />
+        <label for="developer">Developer</label><br />
+
+        <input type="checkbox" name="designer" id="designer" value="designer" />
+        <label for="designer">Designer</label><br />
+
+        <input
+          type="checkbox"
+          name="testengineer"
+          id="testengineer"
+          value="testengineer"
+        />
+        <label for="testengineer">Test Engineer</label><br />
+
+        <input
+          type="checkbox"
+          name="salessupport"
+          id="salessupport"
+          value="salessupport"
+        />
+        <label for="salessupport">Sales Support</label><br />
+
+        <input type="checkbox" name="hr" id="hr" value="hr" />
+        <label for="hr">HR</label>
+        <br />
+        <br />
+
+        <label for="jdate">Tentative Joining Date: </label>
+        <input type="date" name="jdate" id="jdate" required />
+
+        <br />
+        <br />
+
+        <button id="btn" type="submit">Submit</button>
+      </form>
+    </main>
+
+    <script>
+      var uage = document.getElementById("age");
+      uage.setCustomValidity("Enter your age");
+      uage.addEventListener("input", function () {
+        if (uage.value < 18) {
+          uage.setCustomValidity("You are too young to join us");
+        } else if (uage.value > 60) {
+          uage.setCustomValidity("You are too old to join us");
+        } else {
+          uage.setCustomValidity("");
+        }
+      });
+    </script>
+  </body>
+</html>

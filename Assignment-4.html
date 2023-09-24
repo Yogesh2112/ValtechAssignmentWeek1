@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Employee Registration</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+      body {
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgb(6, 153, 153);
+        line-height: 1.5;
+      }
+      header {
+        border: 2px solid #333;
+        background-color: rgb(210, 206, 206);
+        text-align: center;
+        color: #333;
+        margin: 30px auto;
+        max-width: 520px;
+      }
+      main {
+        border: 2px solid #333;
+        background-color: rgb(210, 206, 206);
+        margin: 15px auto;
+        max-width: 520px;
+        padding: 20px;
+      }
+      input {
+        padding: 10px;
+        border: #ddd 1px solid;
+        border-radius: 5px;
+      }
+      #firstname,
+      #lastname,
+      #email {
+        width: 100%;
+        padding: 10px;
+        border: #ddd 1px solid;
+        border-radius: 5px;
+      }
+      #position,
+      #birth_city {
+        padding: 10px;
+        border: #ddd 1px solid;
+        border-radius: 5px;
+      }
+
+      #button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-top: 20px;
+        background-color: #49c1a2;
+        color: white;
+        cursor: pointer;
+      }
+
+      #btn:hover {
+        background-color: #37a08e;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>New Employee Registration Form</h1>
+    </header>
+    <main>
+      <form action="#" method="get" id="form-wrap">
+        <label for="firstname">First Name : </label>
+        <br />
+        <input
+          required
+          type="text"
+          id="firstname"
+          placeholder="Enter your first name"
+        />
+        <br /><br />
+        <label for="firstname">Last Name : </label>
+        <br />
+        <input
+          required
+          type="text"
+          id="lastname"
+          placeholder="Enter your last name"
+        />
+        <br /><br />
+        <label for="firstname">Email : </label>
+        <br />
+        <input
+          required
+          type="email"
+          id="email"
+          placeholder="Enter your email"
+        />
+        <br /><br />
+        <p>Please select your Gender :</p>
+        <input type="radio" id="male" value="male" name="gender" checked />
+        <label for="male">Male</label>
+    
+        <input type="radio" id="female" value="female" name="gender" />
+        <label for="female">Female</label>
+        <br /><br />
+        <label for="age">Enter your Age : </label>
+        <input required type="number" id="age" name="age" min="18" max="60" />
+        <br /><br />
+        <label for="birth_city">Enter your City :</label>
+        <select required name="birth_city" id="birth_city">
+          <option hidden></option>
+          <option value="bangalore">Bangalore</option>
+          <option value="bidar">Bidar</option>
+          <option value="guwahati">Guwahati</option>
+          <option value="hassan">Hassan</option>
+          <option value="jaipur">Jaipur</option>
+          <option value="kanpur">Kanpur</option>
+          <option value="mangalore">Mangalore</option>
+          <option value="patna">Patna</option>
+          <option value="ramnagar">Ramnagar</option>
+          <option value="sambalpur">Sambalpur</option>
+          <option value="srinagar">Srinagar</option>
+          <option value="tumkur">Tumkur</option>
+        </select>
+        <br /><br />
+        <label for="resume">Upload your Resume:</label>
+        <input
+          required
+          type="file"
+          name="resume"
+          accept="application/pdf,application/doc,application/docx"
+        />
+        <br /><br />
+        <label for="position">Position applying for:</label>
+        <select required name="position" id="position">
+          <option hidden></option>
+          <option value="developer">Developer</option>
+          <option value="designer">Designer</option>
+          <option value="test_engineer">Testing Engineer</option>
+          <option value="sales_support">Sales Support</option>
+          <option value="hr">Human Resource (HR)</option>
+        </select>
+        <br /><br />
+        <label for="joining_date">Enter your tentative joining date</label>
+        <input required type="date" id="joining_date" name="joining_date" />
+        <br /><br />
+        <button id="button" value="submit">Submit</button>
+      </form>
+    </main>
+
+    <script>
+      var uage = document.getElementById("age");
+      uage.setCustomValidity("Enter your age");
+      uage.addEventListener("input", function () {
+        if (uage.value < 18) {
+          uage.setCustomValidity("You are too young to join us");
+        } else if (uage.value > 60) {
+          uage.setCustomValidity("You are too old to join us");
+        } else {
+          uage.setCustomValidity("");
+        }
+      });
+      var form = document.getElementById("form-wrap");
+      form.addEventListener("submit", function (event) {
+        var data = {
+          firstname: form.firstname.value,
+          lastname: form.lastname.value,
+          email: form.email.value,
+          gender: form.gender.value,
+          age: form.age.value,
+          birth_city: form.birth_city.value,
+          resume: form.resume.value,
+          position: form.position.value,
+          joining_date: form.joining_date.value,
+        };
+        if (navigator.onLine) {
+          alert("Form submitted");
+        } else {
+          localStorage.setItem("formData", JSON.stringify(data));
+          alert(
+            "Network unavailable. Form saved."
+          );
+        }
+      });
+    </script>
+  </body>
+</html>

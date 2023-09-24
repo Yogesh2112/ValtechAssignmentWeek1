@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diwali Greeting Card</title>
+    <style>
+        canvas {
+            border: 1px solid #000;
+            display: block;
+            margin: 0 auto;
+            margin-top: 25vh;
+
+        }
+    </style>
+</head>
+<body>
+    <canvas id="diwaliCard" width="400" height="400"></canvas>
+
+    <script>
+        var canvas = document.getElementById('diwaliCard');
+        var ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = '#0c1d3d';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = 'silver';
+        ctx.beginPath();
+        ctx.moveTo(80,320);
+        ctx.lineTo(80,200);
+        ctx.lineTo(100,200);
+        ctx.lineTo(100,320);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = 'silver';
+        ctx.beginPath();
+        ctx.moveTo(310,320);
+        ctx.lineTo(310,200);
+        ctx.lineTo(330,200);
+        ctx.lineTo(330,320);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = 'red';
+        ctx.beginPath();
+        ctx.moveTo(90, 190);
+        ctx.lineTo(100, 170);
+        ctx.lineTo(90, 110);
+        ctx.lineTo(80, 170);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = 'red';
+        ctx.beginPath();
+        ctx.moveTo(320, 190);
+        ctx.lineTo(330, 170);
+        ctx.lineTo(320, 110);
+        ctx.lineTo(310, 170);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = 'yellow';
+        ctx.beginPath();
+        ctx.arc(200, 280, 40, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = 'orange';
+        ctx.beginPath();
+        ctx.moveTo(200, 250);
+        ctx.lineTo(160, 280);
+        ctx.lineTo(240, 280);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.fillStyle = 'red';
+        ctx.beginPath();
+        ctx.moveTo(200, 220);
+        ctx.lineTo(190, 180);
+        ctx.lineTo(200, 140);
+        ctx.lineTo(210, 180);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.font = '30px Arial';
+        ctx.fillStyle = 'silver';
+        ctx.fillText('Happy Diwali', 110, 50);
+
+        ctx.font = '20px Arial';
+        ctx.fillStyle = 'silver';
+        ctx.fillText('Wishing you a very happy festival of lights', 15, 370);
+    </script>
+</body>
+</html>
