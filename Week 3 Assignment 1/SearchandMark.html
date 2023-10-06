@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search & Mark</title>
+    <style>
+      .mainbody {
+        font-family: sans-serif;
+        text-align: justify;
+        background-color: rgb(136, 139, 143);
+        line-height: 1.5;
+        padding: 10px;
+      }
+
+      .label {
+        font-size: 25px;
+        font-weight: 100;
+        margin: 10px;
+      }
+
+      #searchtext {
+        width: 250px;
+        height: 30px;
+        border: 1px solid black;
+        margin: 10px;
+      }
+
+      .btn {
+        width: 100px;
+        height: 35px;
+        background-color: rgb(38, 104, 104);
+        color: white;
+        border: 2px solid black;
+        margin: 10px;
+      }
+      .btn:hover {
+        background-color: aqua;
+        color: black;
+        cursor: pointer;
+      }
+    </style>
+
+    <script>
+      function search() {
+        var elm = document.getElementById("searchtext").value;
+
+        var elm1 = document.getElementsByTagName("p")[0];
+
+        //Regular Expression to find the input text in paragraph
+        // "g" stands for global and "i" for case-insensitive
+        var regex = new RegExp(elm, "gi");
+
+        //replace method to find and replace the matched text
+        //$& represents the matched text with the regular expression
+        var target = elm1.textContent.replace(regex, "<mark>$&</mark>");
+        elm1.innerHTML = target;
+        
+        document.getElementById("searchtext").value = "";
+      }
+
+      function init() {
+        document
+          .getElementsByClassName("btn")[0]
+          .addEventListener("click", search);
+      }
+      document.addEventListener("DOMContentLoaded", init);
+    </script>
+  </head>
+  <body>
+    <main class="mainbody">
+      <section>
+        <label class="label" for="searchtext"
+          >Enter Text You Want To Search For :
+        </label>
+        <input type="text" name="SearchText" id="searchtext" />
+        <button type="button" class="btn">Start Search</button>
+      </section>
+      <section class="maintext">
+        <p>
+          JavaScript is a powerful programming language that has revolutionized
+          the way we interact with websites and applications. It has become an
+          essential tool for web developers and is widely used across different
+          platforms. One of the main reasons why JavaScript is so popular is its
+          versatility. It can be effortlessly integrated into HTML and CSS,
+          allowing developers to enhance the functionality and interactivity of
+          websites. With JavaScript, developers can create dynamic web pages
+          that respond to user actions, such as clicking buttons, submitting
+          forms, or scrolling. This enables the creation of engaging and
+          interactive user experiences. JavaScript is also often used to add
+          additional features and functionality to websites, such as form
+          validation, image sliders, or pop-up boxes. It provides a wide range
+          of built-in methods and functions that facilitate these tasks and make
+          web development more efficient. Additionally, JavaScript libraries and
+          frameworks, such as React or Vue, have been developed to further
+          streamline the development process and offer pre-built components.
+          Another advantage of JavaScript is its ability to access and
+          manipulate the Document Object Model (DOM). The DOM represents the
+          structure of an HTML document and allows JavaScript to interact with
+          the elements on a webpage. This enables developers to dynamically
+          update and modify the content, style, and behavior of web pages based
+          on user actions or other events. Furthermore, JavaScript is a
+          versatile language that can be used for both frontend and backend
+          development. On the frontend, it is responsible for creating dynamic
+          user experiences, whereas on the backend, it can be used with
+          frameworks like Node.js to build scalable and efficient server-side
+          applications. This makes JavaScript a full-stack language, capable of
+          handling various aspects of web development. JavaScript also has a
+          large and active developer community, which means that there are
+          countless resources, tutorials, and libraries available to assist
+          developers in their work. This makes it easier for newcomers to learn
+          and get started with the language. Additionally, JavaScript has
+          evolved over time, with the introduction of newer standards like ES6,
+          which introduced features such as arrow functions, classes, and
+          promises, enhancing the language's capabilities. However, JavaScript
+          is not without its limitations. Despite efforts to improve
+          performance, it can sometimes be slower than other languages,
+          especially when dealing with complex calculations or heavy
+          computations. This led to the development of transpilers, such as
+          Babel, which allow developers to write code in newer versions of
+          JavaScript and then convert it to older versions that are better
+          supported by browsers. In conclusion, JavaScript is a widely-used and
+          versatile programming language that has transformed web development.
+          Its ability to create dynamic and interactive web pages, its
+          wide-ranging utility, and its active community make it an essential
+          tool for any developer. While it does have some limitations, its
+          benefits greatly outweigh them, making JavaScript an integral part of
+          modern web development. JavaScript: The Language that Powers the Web
+          JavaScript, also known as JS, is a dynamic, high-level programming
+          language that is widely used for developing interactive web pages and
+          web applications. It was created by Brendan Eich of Netscape
+          Communications in 1995 and has since become one of the most popular
+          scripting languages used on the web. One of the key features of
+          JavaScript is its ability to add interactivity to static HTML pages.
+          With JavaScript, developers can manipulate the content and behavior of
+          a webpage in real-time, depending on user actions or other events.
+          This allows for a more engaging and personalized user experience. From
+          simple form validations to complex data visualizations, JavaScript
+          empowers developers to create powerful and interactive web
+          applications. One of the reasons why JavaScript has gained so much
+          popularity is its ubiquity. Almost every modern web browser supports
+          JavaScript, making it compatible across different platforms and
+          devices. This means that developers can create web applications that
+          can run seamlessly on desktops, tablets, and mobile devices. Moreover,
+          JavaScript can be combined with other web technologies, such as HTML
+          and CSS, to create rich and responsive web interfaces. Another
+          advantage of JavaScript is its dynamic and flexible nature. Unlike
+          traditional programming languages, JavaScript doesn't require
+          compilation and can be executed directly in a web browser. This
+          immediate feedback loop enables developers to rapidly prototype and
+          iterate on their code, enhancing their productivity. JavaScript also
+          supports functional programming paradigms, allowing developers to
+          write more modular and maintainable code. Its object-oriented
+          capabilities further facilitate code reuse and encapsulation. Today,
+          JavaScript has evolved beyond just a client-side scripting language.
+          With the advent of Node.js, JavaScript can now be used on the
+          server-side as well. This opens up a whole new realm of possibilities,
+          from building real-time applications to handling server-side logic.
+          Combined with frameworks like Express.js or React.js, JavaScript has
+          become a formidable tool for full-stack development. However, like any
+          programming language, JavaScript has its challenges. One of the major
+          concerns is security. Since JavaScript runs directly in the user's
+          browser, it is vulnerable to cross-site scripting (XSS) attacks and
+          other malicious activities. Developers need to be cautious and
+          implement proper security measures to protect their applications and
+          data. Despite its challenges, JavaScript remains the go-to language
+          for web development. Its community-driven ecosystem ensures a constant
+          influx of libraries and frameworks, providing developers with a vast
+          array of tools and resources. With its ease of use, flexibility, and
+          compatibility, JavaScript paves the way for a dynamic and engaging web
+          experience. In conclusion, JavaScript has revolutionized web
+          development by enabling interactivity, responsiveness, and dynamic
+          content. It has overcome limitations, expanded its reach, and
+          continues to evolve. From enhancing user experiences to powering
+          complex web applications, JavaScript has solidified its position as
+          the language that powers the web.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
